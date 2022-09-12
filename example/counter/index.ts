@@ -1,3 +1,11 @@
+import {
+    Box,
+    Field,
+    Subtitle,
+    Button,
+} from "../../src/theme/default/components";
+import { $, px } from "../../src/index";
+
 let count = 0;
 
 const counter = new Box({

@@ -1,3 +1,6 @@
+import { Box } from "../../src/theme/default/components";
+import { px } from "../../src/index";
+
 document.body.style.backgroundColor = "dimgrey";
 const bulb = new Box({
     child: new Box({

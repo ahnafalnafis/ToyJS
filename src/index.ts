@@ -1,3 +1,7 @@
+/*************************************************
+ * CSS: {{
+ * Contains CSS stuff like units, functions, etc.
+ ************************************************/
 // Units:
 const px = (value: number): string => `${value}px`;
 const pt = (value: number): string => `${value}pt`;
@@ -15,7 +19,7 @@ const vh = (value: number): string => `${value}vh`;
 const vmin = (value: number): string => `${value}vmin`;
 const vmax = (value: number): string => `${value}vmax`;
 
-// CSS functions:
+// Functions:
 const rgb = (red: number, green: number, blue: number): string =>
     `rgb(${red}, ${green}, ${blue})`;
 
@@ -26,41 +30,9 @@ const rgba = (
     alpha: number
 ): string => `rgba(${red}, ${green}, ${blue}, ${alpha})`;
 
-// Property interfaces:
-interface Style {
-    accentColor?: string;
-    alignContent?: string;
-    alignItems?: string;
-    alignSelf?: string;
-    all?: string;
-    animation?: string;
-    animationDelay?: string;
-
-    border?: any;
-    borderRadius?: any;
-    color?: any;
-    backgroundColor?: any;
-    fontSize?: any;
-    display?: any;
-    padding?: any;
-    width?: any;
-    height?: any;
-    justifyContent?: any;
-}
-
-interface Events {
-    click?: any;
-    mouseover?: any;
-    mouseout?: any;
-}
-
-interface ComponentProps {
-    id?: string;
-    className?: string[];
-    child?: any;
-    style?: Style;
-    on?: Events;
-}
+/*************************************************
+ * CSS }}
+ ************************************************/
 
 /*************************************************
  * Query parser: {{
@@ -188,46 +160,23 @@ const $ = (
     } else _query(node, props);
 };
 
-// Box Component. similar to `<div></div>`
-class Box extends BaseComponent {
-    constructor(props: ComponentProps) {
-        super("div", props);
-    }
-}
-
-// Field Component. similar to `<span></span>`
-class Field extends BaseComponent {
-    constructor(props: ComponentProps) {
-        super("span", props);
-    }
-}
-
-// Title Component. similar to `<h1></h1>`
-class Title extends BaseComponent {
-    constructor(props: ComponentProps) {
-        super("h1", props);
-    }
-}
-
-// Subtitle Component. similar to `<h2></h2>`
-class Subtitle extends BaseComponent {
-    constructor(props: ComponentProps) {
-        super("h2", props);
-    }
-}
-
-// Paragraph Component. similar to `<p></p>`
-class Paragraph extends BaseComponent {
-    constructor(props: ComponentProps) {
-        super("p", props);
-    }
-}
-
-// Button Component. similar to `<button></button>`
-class Button extends BaseComponent {
-    constructor(props: ComponentProps) {
-        super("button", props);
-    }
-}
-
-// TODO: Uncaught TypeError: Cannot read properties of null (reading 'append')
+export {
+    BaseComponent,
+    $,
+    px,
+    pt,
+    pc,
+    cm,
+    mm,
+    inch,
+    em,
+    rem,
+    ex,
+    ch,
+    vw,
+    vh,
+    vmin,
+    vmax,
+    rgb,
+    rgba,
+};
